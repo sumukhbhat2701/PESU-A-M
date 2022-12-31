@@ -1,0 +1,31 @@
+Fine Techniques : day 21_22 : 1st April 2021
+
+puzzle :
+There is a river. On its left bank, there are 3 cannibals, 3 missioneries.
+There is a boat which can carry two people. they have to row the boat.
+Cannibals and missioneries have to cross the river.
+Cannibals are not yet tamed. If the # of cannibals exceeds the number of missioneries,
+the cannibals will eat the missioneries.
+How do we take all of them to the right bank?
+------------
+state space search:
+a graph of states
+a start state
+a goal state
+apply transitions
+check for safe states
+check repeated states
+move from start state to goal state :
+	path in a graph
+	(is a list)
+---------
+do not make the graph
+depth first search : generate the nodes as and when required
+apply the transitions from the current state in some order
+if  the transition results in a safe and not repeated state,
+	add that to a solution list
+if no more transitions, we backtrack
+----------------------
+
+	
+

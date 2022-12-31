@@ -1,0 +1,44 @@
+Fine Techniques: Day21-22 : 5th April 2021
+so far,
+discussing the concept of state space search
+created :
+	state
+		set
+		display
+		compare states
+		
+	transitions
+	
+----------
+make :
+	track dependencies between files
+	recreate the target when the dependent files change
+-----------
+solve:
+a) create a graph
+   find a path from start state to goal state
+b) generate the path from start state to goal state
+   use some traversal technique - depth first search
+   our soln : list
+   start from the start state
+   while not reached the goal state
+   	make a transition
+   	if state is valid and not repeated
+   		add to the list
+   	else
+   		if more transition possible
+   			try the next transition from that state
+   		else
+   			backtrack
+ -------------
+ 
+ create a list of states
+ - init_list
+ - add_list
+ - remove_list
+ - disp_list
+ - is_repeated
+ 
+ 
+ 
+   			

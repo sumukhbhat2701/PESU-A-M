@@ -1,0 +1,281 @@
+CREATE (n:Station {name:'Kengari', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Kengari Bus Terminal', hasParking: 1, hasRailway: 1, hasBusTerminal: 1})
+CREATE (n:Station {name:'Pattanagere', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'JnanaBharathi', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Rajarajeshwari Nagar', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Nayandalli', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Mysore Road', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Deepanjali Nagar', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Attiguppe', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Vijayanagara', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Hosahalli', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Magadi Road', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'KSR', hasParking: 1, hasRailway: 1, hasBusTerminal: 0})
+CREATE (n:Station {name:'Kempagowda Station, Majestic', hasParking: 1, hasRailway: 0, hasBusTerminal: 1})
+CREATE (n:Station {name:'Sir. M. Vishveshwaraya', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Vidhana Soudha', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Cubbon Park', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'MG Road', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Trinity', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Halasuru', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Indiranagar', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Swami Vivekananda Road', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Baiyyappanahalli', hasParking: 1, hasRailway: 1, hasBusTerminal: 0})
+
+CREATE (n:Station {name:'Silk Instutite', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Talaghattapora', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Vajrahalli', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Doddakallasandra', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Konankunte Cross', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Yelachenahalli', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'JP Nagar', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Banashankari', hasParking: 0, hasRailway: 0, hasBusTerminal: 1})
+CREATE (n:Station {name:'Rashtriya Vidyalaya Road', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Jayanagara', hasParking: 1, hasRailway: 0, hasBusTerminal: 1})
+CREATE (n:Station {name:'South End Circle', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Lalbagh', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'National College', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'KR Market', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Chikpet', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Mantri Square', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Srirampura', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Kuvempu Road', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Rajajinagar', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Mahalaxmi Parking', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Sandalsoap factory', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Yeshwantapura', hasParking: 1, hasRailway: 1, hasBusTerminal: 0})
+CREATE (n:Station {name:'Gorguntepalya', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Penya', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Penya Industry', hasParking: 0, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Jalahalli', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Dasarahalli', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+CREATE (n:Station {name:'Nagasandra', hasParking: 1, hasRailway: 0, hasBusTerminal: 0})
+
+CREATE (n:Line {name: 'Purple', number: 2})
+CREATE (n:Line {name: 'Green', number: 1})
+
+CREATE (n:BusTerminal {closeTo: 'Kengari Bus Terminal'})
+CREATE (n:BusTerminal {closeTo: 'Majestic'})
+CREATE (n:BusTerminal {closeTo: 'Jayanagara'})
+CREATE (n:BusTerminal {closeTo: 'Banashankari'})
+
+CREATE (n:RailwayStation {closeTo: 'Kengari Bus Terminal'})
+CREATE (n:RailwayStation {closeTo: 'KSR'})
+CREATE (n:RailwayStation {closeTo: 'Baiyyappanahalli'})
+CREATE (n:RailwayStation {closeTo: 'Yeshwantapura'})
+
+MATCH (s1:Station{name:'Kengari'}),(s2:Station{name:'Kengari Bus Terminal'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Kengari Bus Terminal'}),(s2:Station{name:'Pattanagere'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'JnanaBharathi'}),(s2:Station{name:'Rajarajeshwari Nagar'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Rajarajeshwari Nagar'}),(s2:Station{name:'Nayandalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Nayandalli'}),(s2:Station{name:'Mysore Road'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Mysore Road'}),(s2:Station{name:'Deepanjali Nagar'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Deepanjali Nagar'}),(s2:Station{name:'Attiguppe'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Attiguppe'}),(s2:Station{name:'Vijayanagara'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Vijayanagara'}),(s2:Station{name:'Hosahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Hosahalli'}),(s2:Station{name:'Magadi Road'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Magadi Road'}),(s2:Station{name:'KSR'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'KSR'}),(s2:Station{name:'Kempagowda Station, Majestic'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Kempagowda Station, Majestic'}),(s2:Station{name:'Sir. M. Vishveshwaraya'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Sir. M. Vishveshwaraya'}),(s2:Station{name:'Vidhana Soudha'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Vidhana Soudha'}),(s2:Station{name:'Cubbon Park'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Cubbon Park'}),(s2:Station{name:'MG Road'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'MG Road'}),(s2:Station{name:'Trinity'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Trinity'}),(s2:Station{name:'Halasuru'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Halasuru'}),(s2:Station{name:'Indiranagar'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Indiranagar'}),(s2:Station{name:'Swami Vivekananda Road'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Swami Vivekananda Road'}),(s2:Station{name:'Baiyyappanahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Silk Instutite'}),(s2:Station{name:'Talaghattapora'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Talaghattapora'}),(s2:Station{name:'Vajrahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Vajrahalli'}),(s2:Station{name:'Doddakallasandra'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Doddakallasandra'}),(s2:Station{name:'Konankunte Cross'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Konankunte Cross'}),(s2:Station{name:'Yelachenahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Yelachenahalli'}),(s2:Station{name:'JP Nagar'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'JP Nagar'}),(s2:Station{name:'Banashankari'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Banashankari'}),(s2:Station{name:'Rashtriya Vidyalaya'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Rashtriya Vidyalaya'}),(s2:Station{name:'Jayanagara'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Jayanagara'}),(s2:Station{name:'South End Circle'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'South End Circle'}),(s2:Station{name:'Lalbagh'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Lalbagh'}),(s2:Station{name:'National College'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'National College'}),(s2:Station{name:'KR Market'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'KR Market'}),(s2:Station{name:'Chikpet'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Chikpet'}),(s2:Station{name:'Kempagowda Station, Majestic'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Kempagowda Station, Majestic'}),(s2:Station{name:'Mantri Square'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Mantri Square'}),(s2:Station{name:'Srirampura'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Srirampura'}),(s2:Station{name:'Kuvempu Road'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Kuvempu Road'}),(s2:Station{name:'Rajajinagar'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Rajajinagar'}),(s2:Station{name:'Mahalaxmi'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Mahalaxmi'}),(s2:Station{name:'Sandalsoap factory'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Sandalsoap factory'}),(s2:Station{name:'Yeshwantapura'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Yeshwantapura'}),(s2:Station{name:'Gorguntepalya'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Gorguntepalya'}),(s2:Station{name:'Penya'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Penya'}),(s2:Station{name:'Penya Industry'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Penya Industry'}),(s2:Station{name:'Jalahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Jalahalli'}),(s2:Station{name:'Dasarahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Dasarahalli'}),(s2:Station{name:'Nagasandra'})
+CREATE (s1)-[r:CONNECT{transport: 'metro'}]->(s2)
+
+MATCH (s1:Station{name:'Kengari Bus Terminal'}),(s2:BusTerminal{closeTo:'Kengari Bus Terminal'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+MATCH (s1:Station{name:'Kempagowda Station, Majestic'}),(s2:BusTerminal{closeTo:'Majestic'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+MATCH (s1:Station{name:'Jayanagara'}),(s2:BusTerminal{closeTo:'Jayanagara'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+MATCH (s1:Station{name:'Banashankari'}),(s2:BusTerminal{closeTo:'Banashankari'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+CREATE (n:RailwayStation {closeTo: 'Kengari Bus Terminal'})
+CREATE (n:RailwayStation {closeTo: 'KSR'})
+CREATE (n:RailwayStation {closeTo: 'Baiyyappanahalli'})
+CREATE (n:RailwayStation {closeTo: 'Yeshwantapura'})
+
+MATCH (s1:Station{name:'Kengari Bus Terminal'}),(s2:RailwayStation{closeTo:'Kengari Bus Terminal'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+MATCH (s1:Station{name:'KSR'}),(s2:RailwayStation{closeTo:'KRS'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+MATCH (s1:Station{name:'Baiyyappanahalli'}),(s2:RailwayStation{closeTo:'Baiyyappanahalli'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+MATCH (s1:Station{name:'Yeshwantapura'}),(s2:RailwayStation{closeTo:'Yeshwantapura'})
+CREATE (s1)-[r:CONNECT{transport: 'road'}]->(s2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

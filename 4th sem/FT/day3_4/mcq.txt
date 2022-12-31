@@ -1,0 +1,17 @@
+Which of the following is true?
+
+dangling pointers are dangerous; dereferencing dangling pointers is not
+dangling pointers are not dangerous; dereferencing dangling pointers is 
+garbage causes program to behave wrongly even if there is memory
+'C' does garbage collection based on mark and sweep algorithm
+
+int a[5] = {1, 2, 3, 4, 5};
+int *p = a;
+
+which of the following is false?
+
+p == a 
+*p == *a
+p[0] == a[0]
+sizeof(p) == sizeof(a)
+

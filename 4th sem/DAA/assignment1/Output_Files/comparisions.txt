@@ -1,0 +1,233 @@
+(1)Bubble Sort:
+When input size is 100000 : 
+Comaprisions : 4999950000
+
+When input size is 150000 : 
+Comaprisions : 11249925000
+
+When input size is 200000 : 
+Comaprisions : 19999900000
+
+When input size is 250000 : 
+Comaprisions : 31249875000
+
+When input size is 300000 : 
+Comaprisions : 44999850000
+
+When input size is 350000 : 
+Comaprisions : 61249825000
+
+When input size is 400000 : 
+Comaprisions : 79999800000
+
+When input size is 450000 : 
+Comaprisions : 101249775000
+
+When input size is 500000 : 
+Comaprisions : 124999750000
+
+When input size is 550000 : 
+Comaprisions : 151249725000
+
+When input size is 600000 : 
+Comaprisions : 179999700000
+
+When input size is 650000 : 
+Comaprisions : 211249675000
+
+When input size is 700000 : 
+Comaprisions : 244999650000
+
+When input size is 750000 : 
+Comaprisions : 281249625000
+
+When input size is 800000 : 
+Comaprisions : 319999600000
+
+When input size is 850000 : 
+Comaprisions : 361249575000
+
+When input size is 900000 : 
+Comaprisions : 404999550000
+
+When input size is 950000 : 
+Comaprisions : 451249525000
+
+When input size is 1000000 : 
+Comaprisions : 499999500000
+
+(2)Quick Sort:
+When input size is 100000 : 
+Comaprisions : 1999122
+
+When input size is 150000 : 
+Comaprisions : 3138031
+
+When input size is 200000 : 
+Comaprisions : 4212092
+
+When input size is 250000 : 
+Comaprisions : 5436871
+
+When input size is 300000 : 
+Comaprisions : 7058116
+
+When input size is 350000 : 
+Comaprisions : 8147722
+
+When input size is 400000 : 
+Comaprisions : 9286639
+
+When input size is 450000 : 
+Comaprisions : 10389040
+
+When input size is 500000 : 
+Comaprisions : 12082411
+
+When input size is 550000 : 
+Comaprisions : 12840811
+
+When input size is 600000 : 
+Comaprisions : 14349185
+
+When input size is 650000 : 
+Comaprisions : 15582511
+
+When input size is 700000 : 
+Comaprisions : 17238885
+
+When input size is 750000 : 
+Comaprisions : 18255708
+
+When input size is 800000 : 
+Comaprisions : 19693164
+
+When input size is 850000 : 
+Comaprisions : 20753742
+
+When input size is 900000 : 
+Comaprisions : 22012858
+
+When input size is 950000 : 
+Comaprisions : 22482616
+
+When input size is 1000000 : 
+Comaprisions : 24993946
+
+(3)Selection Sort:
+When input size is 100000 : 
+Comaprisions : 4999950000
+
+When input size is 150000 : 
+Comaprisions : 11249925000
+
+When input size is 200000 : 
+Comaprisions : 19999900000
+
+When input size is 250000 : 
+Comaprisions : 31249875000
+
+When input size is 300000 : 
+Comaprisions : 44999850000
+
+When input size is 350000 : 
+Comaprisions : 61249825000
+
+When input size is 400000 : 
+Comaprisions : 79999800000
+
+When input size is 450000 : 
+Comaprisions : 101249775000
+
+When input size is 500000 : 
+Comaprisions : 124999750000
+
+When input size is 550000 : 
+Comaprisions : 151249725000
+
+When input size is 600000 : 
+Comaprisions : 179999700000
+
+When input size is 650000 : 
+Comaprisions : 211249675000
+
+When input size is 700000 : 
+Comaprisions : 244999650000
+
+When input size is 750000 : 
+Comaprisions : 281249625000
+
+When input size is 800000 : 
+Comaprisions : 319999600000
+
+When input size is 850000 : 
+Comaprisions : 361249575000
+
+When input size is 900000 : 
+Comaprisions : 404999550000
+
+When input size is 950000 : 
+Comaprisions : 451249525000
+
+When input size is 1000000 : 
+Comaprisions : 499999500000
+
+
+(4)Merge Sort:
+When input size is 100000 : 
+Comaprisions : 1536260
+
+When input size is 150000 : 
+Comaprisions : 2392290
+
+When input size is 200000 : 
+Comaprisions : 3272689
+
+When input size is 250000 :
+Comaprisions : 4168937
+
+When input size is 300000 : 
+Comaprisions : 5084379
+
+When input size is 350000 : 
+Comaprisions : 6011343
+
+When input size is 400000 : 
+Comaprisions : 6945635
+
+When input size is 450000 : 
+Comaprisions : 7888924
+
+When input size is 500000 : 
+Comaprisions : 8837744
+
+When input size is 550000 : 
+Comaprisions : 9797537
+
+When input size is 600000 : 
+Comaprisions : 10768743
+
+When input size is 650000 : 
+Comaprisions : 11743999
+
+When input size is 700000 : 
+Comaprisions : 12723256
+
+When input size is 750000 : 
+Comaprisions : 13705002
+
+When input size is 800000 : 
+Comaprisions : 14691150
+
+When input size is 850000 : 
+Comaprisions : 15683834
+
+When input size is 900000 : 
+Comaprisions : 16678270
+
+When input size is 950000 : 
+Comaprisions : 17675228
+
+When input size is 1000000 : 
+Comaprisions : 18674140
+

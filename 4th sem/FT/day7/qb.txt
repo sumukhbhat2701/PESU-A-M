@@ -1,0 +1,4 @@
+What are the different memory allocation and deallocation strategies?
+Where would you store the book keeping if it should be stored in the same memory block?
+How would you link the free blocks and the filled blocks?
+

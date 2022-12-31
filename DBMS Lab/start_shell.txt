@@ -1,0 +1,8 @@
+sudo -i -u postgres
+psql // -d dbname => use dbname
+\c dbname // use dbname
+\d // display all tables or relations
+\d tablename // display schema of tablename
+
+or 
+psql -h localhost -d dbname -U username -p 5432

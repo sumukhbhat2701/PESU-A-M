@@ -1,0 +1,51 @@
+Fine Techniques:
+day 17-18  4th March 2021
+
+sorting a big file on a harddisk:
+- external sorting:
+	- break the file into small parts; do internal sorting
+	  write back these files into harddisk
+	  best possible worst case for comparison based sorting: O(n logn)
+	- combine these files by merging - k way merge
+
+	what if we arrange the smallest in each stream in the form of a minheap?
+		removal : log k
+		insert : log k
+	to find the smallest repeatedly : use heap
+	heap sort in not recommended
+	-------------------------
+	
+	watch the video specified in the last lecture on
+	why we should not use linked list - Stroustrup
+	
+	----------------------
+
+ - Jon Bentley : confession of the coder
+   	requirement : sort one million 7 digit integers - all unique
+   	can we represent each # as a bit?
+   	
+	
+	put the numbers into an array - where posn of each bit indicates a number
+	traverse from the beginning till end - the numbers will be in order
+	- bucketsort : linear
+	
+	-------------------------------------
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+

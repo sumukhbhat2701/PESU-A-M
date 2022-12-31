@@ -1,0 +1,28 @@
+Hook an example to show that
+	a = a + b
+	a += b
+	are not same in Python.
+
+on fork, 
+	what happens to virtual address of
+		local varibles
+		global variables
+		static variables
+		dynamic variables
+	in parent and child?
+	Do any of these share the location?
+	
+int a = 10;
+int *foo()
+{
+	int b = 20;
+	static int c = 30;
+	return ___;
+}
+
+which of the following is logically correct?
+	return &a;
+	return &b;
+	return &c;
+Why?
+

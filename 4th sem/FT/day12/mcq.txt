@@ -1,0 +1,19 @@
+In the array implementation of list we discussed,
+the initial value of head is 
+
+-1
+0
+NULL
+1
+
+We want to delete a node indexed by pres. prev is an index to the node before
+present in the order of traversal. The list is not empty. pres is not same as head.
+The correct code is 
+
+link[prev] = link[pres];
+link[pres] = link[prev];
+link[pres] = link[pres - 1];
+link[prev + 1] = link[pres];
+
+
+

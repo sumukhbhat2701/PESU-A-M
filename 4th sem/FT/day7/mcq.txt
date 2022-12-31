@@ -1,0 +1,17 @@
+On allocation, the memory block contains an int sized book keeping and the a block
+of requested size. This function should return
+
+a pointer to the whole block starting from book keeping
+a pointer to the requested block after book keeping
+two pointers one points the beginning of the requested block and one points to the
+	end of the block
+none of these
+
+to collapse blocks on free, the memory manager 
+
+should follow the blocks in the order in which the nodes are created
+should follow the free blocks contiguously
+shoild follow the filled blocks contiguously
+none of these
+	
+

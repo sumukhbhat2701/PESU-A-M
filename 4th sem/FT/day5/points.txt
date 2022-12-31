@@ -1,0 +1,13 @@
+Fine Techniques:
+lecture 5 : date 23rd Jan 2021
+
+so far:
+- build concept
+- pointers :
+	alias
+	dangling pointer 
+	garbage => memory leak
+	
+	dynamic allocation : book keeping or house keeping
+-----------------------------------------------------
+

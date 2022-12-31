@@ -1,0 +1,106 @@
+day 9: 4nd Feb 2021
+
+------------------------------------------------
+
+bit:
+&    
+	5 & 6
+	0101
+	0110
+	-----
+	0100   => 4
+	
+|
+	5 | 6
+	0101
+	0110
+	0111 => 7
+^
+	5 ^ 6
+	0101
+	0110
+	0011 => 3
+	
+~   ~5
+	11111111 11111111  ... 11111010
+	
+<<   25 => 11001
+	25 << 3    11001000 => 200
+	
+>>   73 >> 2
+	1001001 >> 2  =>  0010010 => 18
+
+
+a) check whether a bit is set
+unsigned int n;
+int i;
+n = ....
+i = ...
+check whether the ith bit set
+	n & (1 << i) => not zero : bit is set
+				 => 0 : bit is not set
+
+b) set a bit
+set ith bit
+	n = n | (1 << i)  // n |= (1 << i)
+	
+c) clear a bit
+clear ith bit
+	n &= ~(1 << i) 
+	
+store # of int in an int location?
+assume that the size of an int : 4 bytes
+
+unsigned int a[4]
+127-96         95 -64          63-32          31-0
+a[3]			a[2]			a[1]			a[0]
+
+100 : which is the bit posn?
+	index or base : 3    floor(100 / 32)
+	offset : 4 			100 mod 4
+	
+----------------------------------------
+
+how to find whether a given number is an exact power of 2?
+Russian Peasant Method:
+	multiply two numbers ; use multiply by 2, divide by 2, check odd
+	and summation
+	given (a, b) find the product
+	s <- 0
+	while a is not 0 do
+		if b is odd
+			add a to s
+		halve a
+		double b
+	output s
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+
+
+// python
+// a = a + b not same a += b ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

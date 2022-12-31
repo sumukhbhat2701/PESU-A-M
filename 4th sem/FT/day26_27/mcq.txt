@@ -1,0 +1,18 @@
+How to add a node in a list on hard disk when there are no free nodes in the middle?
+
+fseek(fp, 0, SEEK_END); then write
+find the size of file in # of nodes- say size- then fseek(fp, size, SEEK_SET);
+    then write
+find the size of file in # of bytes- say size- then fseek(fp, size + 1, SEEK_SET);
+    then write
+find the size of file in # of bytes- say size- then fseek(fp, size, SEEK_END);
+    then write
+ 
+State which of the following is true
+
+fseek is efficient as it has no disk access
+fseek and read are equally efficient
+fseek is efficient as it has no system call
+fseek modifies the size of file on the hard disk
+
+

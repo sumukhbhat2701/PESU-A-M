@@ -1,0 +1,6 @@
+1. use function hijacking to make malloc and free safe.
+2. use function hijacking profile and find the time required to execute that function.
+3. use function hijacking to emit a message at the beginning of a function and 
+   at the end of the same function call
+4. count the number of times a function is called - emit the count each time the function
+   is called.

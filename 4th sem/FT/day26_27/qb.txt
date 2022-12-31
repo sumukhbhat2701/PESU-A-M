@@ -1,0 +1,6 @@
+In implementing data structure in file, we may require a header. What would this
+header have for a) list b) tree?
+
+Would the first node be the headnode of the list? 
+How do we track free nodes?
+

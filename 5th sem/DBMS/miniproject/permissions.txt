@@ -1,0 +1,59 @@
+po_shipment_mgr: 1
+po_products_mgr: 2
+carrier_shipment_mgr: 3
+
+requests -> 
+1. insert, update, select, delete
+2. -
+3. select
+
+appointment ->
+1. select, update(status)
+2. -
+3. insert, update, select, delete
+
+orders ->
+1. insert, update, select, delete
+2. -
+3. select
+
+items, products
+1. select
+2. select, update, insert, delete
+3. -
+
+carrier_c_contact
+1. select
+2. -
+3. select, insert, update, delete
+
+purchasing_organization_po_contact
+1. select, insert, update, delete
+2. select, insert, update, delete
+3. select
+
+location:
+1. select, insert, update, delete
+2. select, insert, update, delete
+3. select
+
+location_l_contact:
+1. select, insert, update, delete
+2. select, insert, update, delete
+3. select
+
+carrier:
+1. select
+2. select
+3. insert, update, select, delete
+
+purchasing_organization:
+1. insert, update, select, delete
+2. insert, update, select, delete
+3. select
+
+po_shipment_mgr: 1
+po_products_mgr: 2
+carrier_shipment_mgr: 3
+
+

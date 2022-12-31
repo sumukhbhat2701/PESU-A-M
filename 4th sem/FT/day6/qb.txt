@@ -1,0 +1,7 @@
+How does pre-processor process the #define?
+Does pre-processor variable have 	
+	scope?
+Does pre-processor understand 'C'?
+
+How to introduce pre-processor variable from the command line while compiling?
+

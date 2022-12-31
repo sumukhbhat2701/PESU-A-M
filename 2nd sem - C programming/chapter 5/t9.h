@@ -1,0 +1,1 @@
+#define inc(x) (x + x)

@@ -1,0 +1,614 @@
+#include "assignment_4.h"
+#include <stdio.h>
+#include <stdlib.h>
+#define DEBUG 0
+
+// create a file with the filename and initialize the header with tree_t structure
+// if the file already exists, just return the file ptr
+FILE* init_tree(const char* filename)
+{
+    FILE* fp = fopen(filename,"r+");
+    if(fp == NULL)
+    {
+        fp = fopen(filename,"w+");
+        if(fp == NULL)
+        {
+            exit(0);
+        }
+        else
+        {
+            tree_t bst;
+            bst.free_head = -1;
+            bst.root = -1;
+            fseek(fp,0,SEEK_SET);
+            fwrite(&bst,sizeof(tree_t),1,fp);
+            return fp;
+        }
+    }
+    else
+    {
+        return fp;
+    }
+}
+
+// close the file pointed by fp
+void close_tree(FILE *fp)
+{
+    fclose(fp);
+}
+
+// Space separated keys. Last key followed by '\n'
+static void inorder_helper(FILE* fp,int offset)
+{
+    if (offset != -1) 
+	{
+		node_t iter;
+		fseek(fp,sizeof(tree_t) + offset*sizeof(node_t), SEEK_SET);
+		fread(&iter,sizeof(node_t),1,fp);
+		inorder_helper(fp,iter.left_offset);
+		printf("%d ",iter.key);
+		inorder_helper(fp,iter.right_offset);
+	}
+}
+
+void display_inorder(FILE *fp)
+{
+    tree_t bst;   
+	fseek(fp,0,SEEK_SET);
+	fread(&bst,sizeof(tree_t),1,fp);
+	if(bst.root == -1)
+    {
+        printf("\n");
+        return;
+    } 
+    inorder_helper(fp, bst.root);
+	printf("\n");
+}
+
+static void preorder_helper(FILE* fp,int offset)
+{
+    if (offset != -1) 
+	{
+		node_t iter;
+		fseek(fp,sizeof(tree_t) + offset*sizeof(node_t), SEEK_SET);
+		fread(&iter,sizeof(node_t),1,fp);
+        printf("%d ",iter.key);
+		preorder_helper(fp,iter.left_offset);
+		preorder_helper(fp,iter.right_offset);
+	}
+}
+
+// Space separated keys. Last key followed by '\n'
+void display_preorder(FILE *fp)
+{
+    tree_t bst;   
+	fseek(fp,0,SEEK_SET);
+	fread(&bst,sizeof(tree_t),1,fp);
+	if(bst.root == -1)
+    {
+        printf("\n");
+        return;
+    }
+    preorder_helper(fp,bst.root);
+	printf("\n");
+}
+
+static int number_of_entries(FILE* fp)
+{
+    int count = 0; node_t iter;
+    fseek(fp,0,SEEK_SET);
+    fseek(fp,sizeof(tree_t),SEEK_SET);
+    while(fread(&iter, sizeof(node_t), 1, fp) > 0)
+	{
+		count++;
+	}
+    return count;
+}
+
+static void display_file(FILE* fp)
+{
+    tree_t bst;
+    fseek(fp,0,SEEK_SET);
+    fread(&bst,sizeof(tree_t),1,fp);
+    printf("%d %d\n",bst.root,bst.free_head);
+    node_t iter;
+    while(fread(&iter, sizeof(node_t), 1, fp) > 0)
+    {
+        printf("%d %d %d\n",iter.left_offset,iter.key,iter.right_offset);
+    }
+    printf("#Nodes= %d\n\n",number_of_entries(fp));
+}
+
+static int inorder_successor(int offset, FILE* fp)
+{
+    node_t iter,parent;
+    fseek(fp,sizeof(tree_t) + offset*sizeof(node_t),SEEK_SET);
+    fread(&iter,sizeof(node_t),1,fp);
+    int temp = iter.right_offset;
+    while(temp!=-1)
+    {
+        fseek(fp,sizeof(tree_t) + temp*sizeof(node_t),SEEK_SET);
+        parent = iter;
+        fread(&iter,sizeof(node_t),1,fp);
+        temp = iter.left_offset;
+    }
+    fseek(fp,-sizeof(node_t),SEEK_CUR);
+    return (int)ftell(fp);
+
+}
+
+// insert the key into the tree in the file
+// if the key already exists just return
+void insert_key(int key, FILE *fp)
+{
+    tree_t bst;
+    node_t new;
+    new.key = key;
+    new.left_offset = -1;
+    new.right_offset = -1;
+    fseek(fp,0,SEEK_SET);
+    fread(&bst,sizeof(tree_t),1,fp);
+    if(bst.root == -1)
+    {
+        if(bst.free_head == -1)
+        {
+            bst.root = 0;
+            fseek(fp,0,SEEK_SET);
+            fwrite(&bst,sizeof(tree_t),1,fp);
+            fwrite(&new,sizeof(node_t),1,fp);
+        }
+        else
+        {
+            bst.root = bst.free_head;
+            node_t hole;
+            fseek(fp,sizeof(tree_t) + bst.free_head*sizeof(node_t),SEEK_SET);
+            fread(&hole,sizeof(node_t),1,fp);
+            bst.free_head = hole.right_offset;
+            fseek(fp,-sizeof(node_t),SEEK_CUR);
+            fwrite(&new,sizeof(node_t),1,fp);
+            fseek(fp,0,SEEK_SET);
+            fwrite(&bst,sizeof(node_t),1,fp);
+
+        }
+        
+    }
+    else
+    {
+        //search
+        node_t iter; int left,offset;
+        fseek(fp,sizeof(tree_t) + bst.root*sizeof(node_t),SEEK_SET);
+        fread(&iter,sizeof(node_t),1,fp);
+        // init offset and left
+        if(key > iter.key)
+        {
+            offset = iter.right_offset;
+            left = 0;
+        }
+        else
+        {
+            offset = iter.left_offset;
+            left = 1;
+        }
+        while(offset != -1)
+        {
+            fseek(fp,sizeof(tree_t) + offset*sizeof(node_t),SEEK_SET);
+            fread(&iter,sizeof(node_t),1,fp);
+            if(iter.key == key) { printf("duplicate\n"); return; }
+            if(key > iter.key)
+            {
+                offset = iter.right_offset;
+                left = 0;
+            }
+            else
+            {
+                offset = iter.left_offset;
+                left = 1;
+            }
+        }
+        fseek(fp,-sizeof(node_t),SEEK_CUR);
+        //insert
+        if(bst.free_head == -1)
+        {
+                offset = (int)ftell(fp);
+                if(left)
+                { 
+                    iter.left_offset = number_of_entries(fp); 
+                }
+                else
+                {
+                    iter.right_offset = number_of_entries(fp); 
+                }
+                fseek(fp,offset,SEEK_SET);
+                fwrite(&iter,sizeof(node_t),1,fp);
+                fseek(fp,sizeof(tree_t) + number_of_entries(fp)*sizeof(node_t),SEEK_SET);
+                fwrite(&new,sizeof(node_t),1,fp);
+        }
+        else
+        {            
+                if(left)
+                { 
+                    iter.left_offset = bst.free_head; 
+                }
+                else
+                {
+                    iter.right_offset = bst.free_head; 
+                }
+                fwrite(&iter,sizeof(node_t),1,fp);
+
+                node_t hole;
+                fseek(fp,(bst.free_head)*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fread(&hole,sizeof(node_t),1,fp);
+                if(hole.right_offset == -1)
+                {
+                    fseek(fp,-sizeof(node_t),SEEK_CUR);
+                    fwrite(&new,sizeof(node_t),1,fp);
+                    bst.free_head = -1;
+                    fseek(fp,0,SEEK_SET);
+                    fwrite(&bst,sizeof(tree_t),1,fp);
+                }
+                else
+                {
+                    fseek(fp,-sizeof(node_t),SEEK_CUR);
+                    fwrite(&new,sizeof(node_t),1,fp);
+                    bst.free_head = hole.right_offset;
+                    fseek(fp,0,SEEK_SET);
+                    fwrite(&bst,sizeof(tree_t),1,fp);
+                }           
+        }
+    }
+    if(DEBUG) display_file(fp);
+}
+
+
+
+// delete the key from the tree in the file
+// the key may or may not exist
+void delete_key(int key, FILE *fp)
+{
+    // printf("DELETING...%d\n",key);
+    if(DEBUG) display_file(fp);
+    tree_t bst;
+    node_t new;
+    new.key = key;
+    new.left_offset = -1;
+    new.right_offset = -1;
+    fseek(fp,0,SEEK_SET);
+    fread(&bst,sizeof(tree_t),1,fp);
+    if(bst.root == -1)
+    {
+        printf("TREE EMPTY\n");
+        return;
+    }
+    else
+    {
+        //search
+        node_t iter, parent, child; 
+        int p_offset = -1,c_offset = bst.root,temp,left,is_root = 0;
+        fseek(fp,bst.root*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+        fread(&iter,sizeof(node_t),1,fp);
+        if(iter.key > key)
+        {
+            left = 1;
+            p_offset = c_offset;
+            c_offset = iter.left_offset;
+            
+        }
+        else if(iter.key < key)
+        {
+            left = 0;
+            p_offset = c_offset;
+            c_offset = iter.right_offset;     
+        }
+        else
+        {
+            is_root = 1;
+        }
+        while(c_offset!= -1)
+        {
+            fseek(fp,c_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+            fread(&iter,sizeof(node_t),1,fp);
+            if(key == iter.key)
+                break;
+            else
+            {
+                if(iter.key > key)
+                {
+                    left = 1;
+                    p_offset = c_offset;
+                    c_offset = iter.left_offset;
+                    
+                }
+                else if(iter.key < key)
+                {
+                    left = 0;
+                    p_offset = c_offset;
+                    c_offset = iter.right_offset;     
+                }
+            }
+        }
+
+        if(c_offset == -1) {printf("NOT FOUND %d\n",key); return;}
+
+        fseek(fp,sizeof(tree_t) + c_offset*sizeof(node_t),SEEK_SET);
+        fread(&child,sizeof(node_t),1,fp);
+
+        if(!is_root)
+        {
+            fseek(fp,sizeof(tree_t) + p_offset*sizeof(node_t),SEEK_SET);
+            fread(&parent,sizeof(node_t),1,fp);
+        }
+        
+       
+        //leaf nodes
+        if(child.left_offset == -1 && child.right_offset == -1)
+        {
+            child.right_offset = -1;            
+            fseek(fp,sizeof(tree_t) + c_offset*sizeof(node_t),SEEK_SET);
+            fwrite(&child,sizeof(node_t),1,fp);
+
+            if(!is_root)
+            {
+                if(left) parent.left_offset = -1;
+                else parent.right_offset = -1;
+                fseek(fp,sizeof(tree_t) + p_offset*sizeof(node_t),SEEK_SET);
+                fwrite(&parent,sizeof(node_t),1,fp);
+            }
+            else
+            {
+                bst.root = -1;
+                fseek(fp,0,SEEK_SET);
+                fwrite(&bst,sizeof(tree_t),1,fp);
+            }
+            
+
+            node_t hole;
+            if(bst.free_head == -1)
+            {
+                bst.free_head = c_offset;
+                fseek(fp,0,SEEK_SET);
+                fwrite(&bst,sizeof(tree_t),1,fp);
+            }
+            else
+            {
+                fseek(fp,(bst.free_head)*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fread(&hole,sizeof(node_t),1,fp);
+
+                while(hole.right_offset!=-1)
+                {
+                    fseek(fp,sizeof(tree_t) + hole.right_offset*sizeof(node_t),SEEK_SET);
+                    fread(&hole,sizeof(node_t),1,fp);
+                }
+            
+                hole.right_offset = c_offset;
+                fseek(fp,-sizeof(node_t),SEEK_CUR);
+                fwrite(&hole,sizeof(node_t),1,fp);
+            }
+            
+
+        }
+        // 1 child case
+        else if((child.left_offset == -1 && child.right_offset!=-1) || (child.left_offset!=-1) && (child.right_offset == -1)) // 1 child case
+        {
+            
+
+            int offset;
+            if(child.left_offset == -1)
+            {
+                // right child
+                offset = child.right_offset;
+                if(!is_root)
+                {
+                    if(left)
+                    {
+                        parent.left_offset = offset;
+                    }
+                    else
+                    {
+                        parent.right_offset = offset;
+                    }
+                    fseek(fp,sizeof(tree_t) + p_offset*sizeof(node_t),SEEK_SET);
+                    fwrite(&parent,sizeof(node_t),1,fp);
+                }
+                else
+                {
+                    // if root has 1 child and we delete root 
+                    bst.root = offset;
+                    fseek(fp,0,SEEK_SET);
+                    fwrite(&bst,sizeof(node_t),1,fp);
+                }
+
+
+            }
+            else
+            {
+                // left child
+                offset = child.left_offset;
+                if(!is_root)
+                {
+                    if(left)
+                    {
+                        parent.left_offset = offset;
+                    }
+                    else
+                    {
+                        parent.right_offset = offset;
+                    }
+                    fseek(fp,sizeof(tree_t) + p_offset*sizeof(node_t),SEEK_SET);
+                    fwrite(&parent,sizeof(node_t),1,fp);
+                }
+                else
+                {
+                    // if root has 1 child and we delete root 
+                    bst.root = offset;
+                    fseek(fp,0,SEEK_SET);
+                    fwrite(&bst,sizeof(node_t),1,fp);
+                }
+            }
+
+            child.right_offset = -1;            
+            fseek(fp,sizeof(tree_t) + c_offset*sizeof(node_t),SEEK_SET);
+            fwrite(&child,sizeof(node_t),1,fp);
+
+            node_t hole;
+            if(bst.free_head == -1)
+            {
+                bst.free_head = c_offset;
+                fseek(fp,0,SEEK_SET);
+                fwrite(&bst,sizeof(tree_t),1,fp);
+            }
+            else
+            {
+                fseek(fp,(bst.free_head)*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fread(&hole,sizeof(node_t),1,fp);
+
+                while(hole.right_offset!=-1)
+                {
+                    fseek(fp,sizeof(tree_t) + hole.right_offset*sizeof(node_t),SEEK_SET);
+                    fread(&hole,sizeof(node_t),1,fp);
+                }
+            
+                hole.right_offset = c_offset;
+                fseek(fp,-sizeof(node_t),SEEK_CUR);
+                fwrite(&hole,sizeof(node_t),1,fp);
+            }
+
+        }
+        else if(child.left_offset!=-1 && child.right_offset!=-1) // 2 child case
+        {
+            node_t insucc; int left = 0;
+            fseek(fp,sizeof(tree_t) + c_offset*sizeof(node_t),SEEK_SET);
+            fread(&insucc,sizeof(node_t),1,fp);
+            
+            // fseek(fp,sizeof(tree_t) + bst.root*sizeof(node_t),SEEK_SET);
+            // fread(&root,sizeof(node_t),1,fp);
+            int temp = insucc.right_offset;
+            int insucc_offset = c_offset;
+            p_offset = c_offset;
+            while(temp!=-1)
+            {
+                fseek(fp,sizeof(tree_t) + temp*sizeof(node_t),SEEK_SET);
+                p_offset = insucc_offset;
+                insucc_offset = temp;
+                parent = insucc;
+                fread(&insucc,sizeof(node_t),1,fp);
+                temp = insucc.left_offset;
+                if(insucc.left_offset!=-1)
+                    left = 1;
+            }
+            // fseek(fp,-sizeof(node_t),SEEK_CUR);
+
+            // int offset = (int)ftell(fp);
+            fseek(fp,insucc_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+            fread(&insucc,sizeof(node_t),1,fp);
+
+            int swap = child.key; 
+            child.key = insucc.key;
+            insucc.key = swap;
+
+            fseek(fp,insucc_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+            fwrite(&insucc,sizeof(node_t),1,fp);
+
+            fseek(fp,sizeof(tree_t) + c_offset*sizeof(node_t),SEEK_SET);
+            fwrite(&child,sizeof(node_t),1,fp);
+
+            // if(DEBUG) {printf("SWAPPED...\n");display_file(fp);printf("P=%dC=%d\n",parent.key,insucc.key);}
+            child = insucc;
+            if(insucc.right_offset == -1)
+            {
+                child.right_offset = -1;            
+                fseek(fp,insucc_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fwrite(&child,sizeof(node_t),1,fp);
+
+                fseek(fp,p_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fread(&parent,sizeof(node_t),1,fp);
+
+                if(!left)
+                    parent.right_offset = -1;
+                else
+                    parent.left_offset = -1;
+
+                // display_file(fp);
+                // printf("PRR=%d\n",parent.key);
+                fseek(fp,sizeof(tree_t) + p_offset*sizeof(node_t),SEEK_SET);
+                fwrite(&parent,sizeof(node_t),1,fp);
+                // display_file(fp);
+
+                node_t hole;
+                if(bst.free_head == -1)
+                {
+                    bst.free_head = insucc_offset;
+                    fseek(fp,0,SEEK_SET);
+                    fwrite(&bst,sizeof(tree_t),1,fp);
+                }
+                else
+                {
+                    fseek(fp,(bst.free_head)*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                    fread(&hole,sizeof(node_t),1,fp);
+
+                    while(hole.right_offset!=-1)
+                    {
+                        fseek(fp,sizeof(tree_t) + hole.right_offset*sizeof(node_t),SEEK_SET);
+                        fread(&hole,sizeof(node_t),1,fp);
+                    }
+                
+                    hole.right_offset = insucc_offset;
+                    fseek(fp,-sizeof(node_t),SEEK_CUR);
+                    fwrite(&hole,sizeof(node_t),1,fp);
+                }
+            }
+            else
+            {
+                // right child
+                
+
+                // if is_root???
+                fseek(fp,p_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fread(&parent,sizeof(node_t),1,fp);
+
+
+                if(left)
+                    parent.left_offset = insucc.right_offset;
+                else
+                    parent.right_offset = insucc.right_offset;
+                    
+                // printf("PPPP=%d %d\n",parent.right_offset,parent.key);
+                fseek(fp,sizeof(tree_t) + p_offset*sizeof(node_t),SEEK_SET);
+                fwrite(&parent,sizeof(node_t),1,fp);
+
+                insucc.right_offset = -1;            
+                fseek(fp,insucc_offset*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                fwrite(&insucc,sizeof(node_t),1,fp);
+
+                node_t hole;
+                if(bst.free_head == -1)
+                {
+                    bst.free_head = insucc_offset;
+                    fseek(fp,0,SEEK_SET);
+                    fwrite(&bst,sizeof(tree_t),1,fp);
+                }
+                else
+                {
+                    fseek(fp,(bst.free_head)*sizeof(node_t) + sizeof(tree_t),SEEK_SET);
+                    fread(&hole,sizeof(node_t),1,fp);
+
+                    while(hole.right_offset!=-1)
+                    {
+                        fseek(fp,sizeof(tree_t) + hole.right_offset*sizeof(node_t),SEEK_SET);
+                        fread(&hole,sizeof(node_t),1,fp);
+                    }
+                
+                    hole.right_offset = insucc_offset;
+                    fseek(fp,-sizeof(node_t),SEEK_CUR);
+                    fwrite(&hole,sizeof(node_t),1,fp);
+                }
+
+            }
+
+
+
+        }
+       
+        
+    }
+    if(DEBUG) display_file(fp);
+}

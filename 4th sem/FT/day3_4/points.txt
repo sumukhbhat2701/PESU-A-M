@@ -1,0 +1,22 @@
+pointers:
+- pointers and address
+  address : low level mechanism
+  pointer : high level mechanism - has a type
+  
+program in a state of execution : process
+process : virtual address space
+        : different segments
+        text segment : machine code equivalent of the program
+        Data segment : all global and static variables
+        				string literals
+        stack segment : local variables in a block (automatic)
+        heap segment  : dynamic memory
+ 
+int a;       
+&a => virtual address
+-------------
+pointer:
+	1. alias : more than one pointer points to the same location
+	changing the referrent thro one will also affect the referrent through the other 
+	2. dangling pointer : no loc; access
+	3. garbage => memory leak : loc; no access       

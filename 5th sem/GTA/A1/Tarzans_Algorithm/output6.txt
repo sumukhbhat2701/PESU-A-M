@@ -1,0 +1,2 @@
+Articulation points obtained are:
+0 3 

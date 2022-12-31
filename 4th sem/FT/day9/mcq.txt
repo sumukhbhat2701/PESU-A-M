@@ -1,0 +1,19 @@
+n & (n - 1) is not zero
+
+if the number is even
+if the number is an exact power of 2
+if the number is not an exact power of 2
+if the number is an exact power of 10
+
+a = ...; // some unsigned int value
+b = ...; // some unsigned int value
+a = a ^ b;
+b = a ^ b;
+a = a ^ b;
+
+both a and b become 0
+a and b get swapped
+both a and b have the old value of a
+both a and b have the old value of b
+
+

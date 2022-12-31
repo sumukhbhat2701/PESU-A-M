@@ -1,0 +1,7 @@
+In the array implementation of list, can we store pointer in the link field
+	instead of int?
+Would this affect the client?
+
+How do we make out the empty slots (with delete also implented)? Would this operation
+be linear or constant time?
+

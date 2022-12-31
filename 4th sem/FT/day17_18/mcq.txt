@@ -1,0 +1,23 @@
+int what(int a, int (*op)(int))
+{
+	return op(a);
+}
+int foo(int x) { return x % 2; }
+int main()
+{
+	int res =  what(25, foo);
+}
+
+syntax error
+res becomes 25
+res become 0
+res becomes 1
+
+int (*foo[4])(int, int);
+Which of the following is syntactically correct?
+
+foo[1](2, 3)
+foo(2, 3)[1]
+foo(1)[2, 3]
+foo(2, 3)
+

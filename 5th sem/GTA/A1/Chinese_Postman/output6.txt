@@ -1,0 +1,3 @@
+Minimum extra cost needed to traverse all edges = 0
+The graph already has a Euler path:
+0 -> 1 -> 2 -> 0 -> 3 -> 4 -> 0

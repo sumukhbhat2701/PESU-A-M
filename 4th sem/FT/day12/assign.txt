@@ -1,0 +1,5 @@
+Change the linked list implementation to
+a) array implementation (without delete)
+b) array implementation with header node
+Do not change the client.
+

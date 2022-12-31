@@ -1,0 +1,76 @@
+When input size is 100000 : 
+Time         : 27.328125 seconds
+Comaprisions : 4999950000
+
+When input size is 150000 : 
+Time         : 62.828125 seconds
+Comaprisions : 11249925000
+
+When input size is 200000 : 
+Time         : 110.453125 seconds
+Comaprisions : 19999900000
+
+When input size is 250000 : 
+Time         : 174.000000 seconds
+Comaprisions : 31249875000
+
+When input size is 300000 : 
+Time         : 249.593750 seconds
+Comaprisions : 44999850000
+
+When input size is 350000 : 
+Time         : 345.031250 seconds
+Comaprisions : 61249825000
+
+When input size is 400000 : 
+Time         : 441.281250 seconds
+Comaprisions : 79999800000
+
+When input size is 450000 : 
+Time         : 561.281250 seconds
+Comaprisions : 101249775000
+
+When input size is 500000 : 
+Time         : 694.546875 seconds
+Comaprisions : 124999750000
+
+When input size is 550000 : 
+Time         : 835.406250 seconds
+Comaprisions : 151249725000
+
+When input size is 600000 : 
+Time         : 1010.906250 seconds
+Comaprisions : 179999700000
+
+When input size is 650000 : 
+Time         : 1192.328125 seconds
+Comaprisions : 211249675000
+
+When input size is 700000 : 
+Time         : 1362.562500 seconds
+Comaprisions : 244999650000
+
+When input size is 750000 : 
+Time         : 1557.390625 seconds
+Comaprisions : 281249625000
+
+When input size is 800000 : 
+Time         : 1768.890625 seconds
+Comaprisions : 319999600000
+
+When input size is 850000 : 
+Time         : 2001.546875 seconds
+Comaprisions : 361249575000
+
+When input size is 900000 : 
+Time         : 2242.312500 seconds
+Comaprisions : 404999550000
+
+When input size is 950000 : 
+Time         : 2518.421875 seconds
+Comaprisions : 451249525000
+
+When input size is 1000000 : 
+Time         : 2777.593750 seconds
+Comaprisions : 499999500000
+

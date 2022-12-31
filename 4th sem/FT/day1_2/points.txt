@@ -1,0 +1,118 @@
+Fine Techniques:
+N S Kumar
+kumaradhara@gmail.com
+nskumar@pes.edu
+ph:98450 66845
+fb: nagabhushana satya kumar
+---------------------------
+
+assessment plan:
+assignments : 4 each for 20 points 
+ESA : MCQ for 20 points
+
+--------------------------
+
+Tue :  1. 30 min
+Thu :  45 min
+
+---------------
+
+interface and implementation
+data structure : interface
+	ADT : Abstract Data type
+
+type : is a set
+	set of values
+	set of operations
+	operation : what and not how
+25 + 36
+result : 61
+-----------------
+
+pre-requisite:
+C
+Data structure
+
+--------------
+Books : C
+The C programming Language : K & R
+The C puzzle book : Feuer
+Expert C programming; Deep C secrets  :Van Der Linden
+--------------
+Writing efficient programs in  'C' : Jon Bentley
+Programming pearls
+more programming pearls
+-----------------
+expression evaluation:
+- evaluation of operands
+	fetching operands from memory to registers of the 
+		CPU
+	order of evalauation of operands is not
+		defined
+- evaluation of operators
+	precedence
+	association
+	
+a = 10;
+b = a++ * a; // unspecified in C
+    10 * 10
+         11
+// what is the value of b?
+// 100 - 11 yes
+// 110 - 13 yes
+BCZ - order of evalauation of operands is not
+		defined
+a++ :  expression : has a value : variable is also 
+	changed; side effect
+a + 1 : expression : has a value ; nothing changed;
+	no side effect
+
+
+x + y * z
+How is this expression evaluated?
+- operator evaluation follows
+	precedence
+	association
+x - y - z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	

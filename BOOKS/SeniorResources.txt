@@ -1,0 +1,5 @@
+OS From Scratch: https://s-matyukevich.github.io/raspberry-pi-os/docs/lesson01/rpi-os.html
+
+DSA: https://cses.fi/problemset
+
+OS, the best and short book: v 

@@ -1,0 +1,4 @@
+https://www.eskimo.com/~scs/cclass/krnotes/sx8e.html
+
+char* x = "hello"; // x is readable but not writeable. Eg: x[0] = 'H'; or strcpy(x, ...); not possible => allocate memory first using malloc and then strcpy! (space for characters are allocated in read-only area by the compiler)
+char x[] = "hello"; // both readble and writeable even when out of scope where it is declared as array(even if in function parameter it is defined as char* s etc) -> because at compile time, it as it is array, space is allocated in right memory location(both read/write) and even if array becomes a ptr at runtime we can read/write both 

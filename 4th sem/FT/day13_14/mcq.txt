@@ -1,0 +1,17 @@
+In binary counter method of finding the second biggest, the number of comparisons
+is (assume n is a power of 2)
+
+2n - 3
+3n - 2
+n + logn - 2
+n + logn - 1
+
+In binary counter method of finding the second biggest, the extra space required is
+
+O(n)
+O(log(n^2))
+O((log n)^2)
+O(n log(n))
+
+
+

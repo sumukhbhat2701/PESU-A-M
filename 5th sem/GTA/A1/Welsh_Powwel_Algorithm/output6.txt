@@ -1,0 +1,8 @@
+1 is colored with c1
+3 is colored with c1
+4 is colored with c2
+2 is colored with c2
+0 is colored with c2
+5 is colored with c3
+6 is colored with c4
+All vertices colored successfully with chromatic number = 4

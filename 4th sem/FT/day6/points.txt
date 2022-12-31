@@ -1,0 +1,18 @@
+Lecture 6:
+Fine Techniques : 28th Jan 2011
+
+so far,
+build cycle:
+	pre-processing, compiling, linking, loading, running
+pointers:
+	virtual address
+	functions with pointers as parameters
+	dynamic memory management
+		book keeping or house keeping
+		
+hijacking function:
+- profiling
+- safety:
+	malloc
+	free
+	

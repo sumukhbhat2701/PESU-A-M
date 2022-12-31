@@ -1,0 +1,227 @@
+# Testcase1:
+insert_key(10,fp);
+insert_key(7,fp);
+insert_key(5,fp);
+insert_key(8,fp);
+insert_key(15,fp);
+insert_key(11,fp);
+insert_key(18,fp);
+display_inorder(fp);
+delete_key(11,fp);
+display_inorder(fp);
+delete_key(15,fp);
+display_inorder(fp);
+delete_key(10,fp);
+display_inorder(fp);
+
+# Output - Testcase1
+5 7 8 10 11 15 18 
+5 7 8 10 15 18 
+5 7 8 10 18 
+5 7 8 18 
+
+# Testcase2:
+insert_key(10,fp);
+delete_key(10,fp);
+display_inorder(fp);
+
+# Output - Testcase2
+(nothing)
+
+
+# Testcase3:
+insert_key(10,fp);
+insert_key(7,fp);
+insert_key(15,fp);
+display_inorder(fp);
+delete_key(10,fp);
+display_inorder(fp);
+delete_key(15,fp);
+delete_key(7,fp);
+display_inorder(fp);
+insert_key(20,fp);
+insert_key(15,fp);
+display_inorder(fp);
+delete_key(20,fp);
+display_inorder(fp);
+
+# output - Testcase3:
+7 10 15 
+7 15
+15 20 
+15 
+
+# Testcase4:
+insert_key(10,fp);
+insert_key(5,fp);
+insert_key(15,fp);
+insert_key(1,fp);
+insert_key(6,fp);
+insert_key(7,fp);
+insert_key(14,fp);
+insert_key(16,fp);
+insert_key(13,fp);
+display_inorder(fp);
+delete_key(10,fp);
+display_inorder(fp);
+delete_key(14,fp);
+display_inorder(fp);
+delete_key(15,fp);
+display_inorder(fp);
+delete_key(16,fp);
+display_inorder(fp);
+delete_key(5,fp);
+display_inorder(fp);
+delete_key(13,fp);
+display_inorder(fp);
+delete_key(6,fp);
+display_inorder(fp);
+delete_key(7,fp);
+display_inorder(fp);
+delete_key(1,fp);
+display_inorder(fp);
+
+# Output - Testcase4
+1 5 6 7 10 13 14 15 16 
+1 5 6 7 13 14 15 16 
+1 5 6 7 13 15 16 
+1 5 6 7 13 16 
+1 5 6 7 13 
+1 6 7 13 
+1 6 7 
+1 7 
+1 
+(nothing)
+
+# Testcase5:
+insert_key(10,fp);
+insert_key(5,fp);
+insert_key(15,fp);
+insert_key(1,fp);
+insert_key(6,fp);
+insert_key(7,fp);
+insert_key(14,fp);
+insert_key(16,fp);
+insert_key(13,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(10,fp);
+display_inorder(fp);display_preorder(fp);
+insert_key(20,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(13,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(14,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(15,fp);
+display_inorder(fp);display_preorder(fp);
+insert_key(12,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(16,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(5,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(13,fp);
+display_inorder(fp);display_preorder(fp);
+insert_key(22,fp);
+display_inorder(fp);display_preorder(fp);
+insert_key(0,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(6,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(7,fp);
+display_inorder(fp);display_preorder(fp);
+delete_key(1,fp);
+display_inorder(fp);display_preorder(fp);
+
+# Output - Testcase5
+1 5 6 7 10 13 14 15 16 
+10 5 1 6 7 15 14 13 16 
+1 5 6 7 13 14 15 16 
+13 5 1 6 7 15 14 16 
+1 5 6 7 13 14 15 16 20 
+13 5 1 6 7 15 14 16 20 
+1 5 6 7 14 15 16 20 
+14 5 1 6 7 15 16 20 
+1 5 6 7 15 16 20 
+15 5 1 6 7 16 20 
+1 5 6 7 16 20 
+16 5 1 6 7 20 
+1 5 6 7 12 16 20 
+16 5 1 6 7 12 20 
+1 5 6 7 12 20 
+20 5 1 6 7 12 
+1 6 7 12 20 
+20 6 1 7 12 
+1 6 7 12 20 
+20 6 1 7 12 
+1 6 7 12 20 22 
+20 6 1 7 12 22 
+0 1 6 7 12 20 22 
+20 6 1 0 7 12 22 
+0 1 7 12 20 22 
+20 7 1 0 12 22 
+0 1 12 20 22 
+20 12 1 0 22 
+0 12 20 22 
+20 12 0 22 
+
+# testcase6:
+insert_key(50, fp);
+insert_key(30, fp);
+insert_key(20, fp);
+insert_key(40, fp);
+insert_key(70, fp);
+insert_key(60, fp);
+insert_key(80, fp);
+insert_key(10, fp);
+insert_key(25, fp);
+insert_key(45, fp);
+insert_key(51, fp);
+insert_key(65, fp);
+insert_key(90, fp);
+display_inorder(fp);
+delete_key(50, fp);
+display_preorder(fp);
+delete_key(51, fp);
+display_preorder(fp);
+delete_key(10, fp);
+display_preorder(fp);
+delete_key(20, fp);
+display_preorder(fp);
+delete_key(70, fp);
+display_preorder(fp);
+delete_key(60, fp);
+display_preorder(fp);
+delete_key(30, fp);
+display_preorder(fp);
+delete_key(90, fp);
+display_preorder(fp);
+delete_key(65, fp);
+display_preorder(fp);
+delete_key(40, fp);
+display_preorder(fp);
+delete_key(45, fp);
+display_preorder(fp);
+delete_key(80, fp);
+display_preorder(fp);
+delete_key(25, fp);
+display_preorder(fp);
+
+# output testcase6:
+10 20 25 30 40 45 50 51 60 65 70 80 90 
+51 30 20 10 25 40 45 70 60 65 80 90 
+60 30 20 10 25 40 45 70 65 80 90 
+60 30 20 25 40 45 70 65 80 90 
+60 30 25 40 45 70 65 80 90 
+60 30 25 40 45 80 65 90 
+65 30 25 40 45 80 90 
+65 40 25 45 80 90 
+65 40 25 45 80 
+80 40 25 45 
+80 45 25 
+80 25 
+25 
+
+
+
+

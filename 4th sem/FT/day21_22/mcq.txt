@@ -1,0 +1,22 @@
+int is_valid(const state_t *ptr_state)
+{
+	return ptr_state->can <= ptr_state->mis;
+}
+As per the puzzle, the # of cannibals should not exceed # of missionaries.
+The above function
+
+is correct
+is incorrect as the state will be reversed on the other bank
+is incorrect as boatpos is not checked
+is incorrect as fnindex is not checked
+
+---------
+
+to check whether the two states are same, 
+we should compare
+
+# of can and # of mis
+# of can and # of mis and boatpos
+# of can and # of mis and boatpos and fn_index
+none of these
+

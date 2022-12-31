@@ -1,0 +1,11 @@
+Distinguish:
+alias
+garbage leading memory leak
+dangling pointer
+
+where can garbage be created?
+	data segment, stack, heap ?
+
+What is book keeping? When does it come into play?
+
+

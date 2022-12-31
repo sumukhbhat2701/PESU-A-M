@@ -1,0 +1,18 @@
+Weight of obtained MST = 19
+Baruvkas Algorithm:
+Undirected edges included in the obtained MST:
+0 <-> 3
+0 <-> 1
+2 <-> 3
+
+Reverse Delete Algorithm:
+Undirected edges included in the obtained MST:
+1 <-> 0
+3 <-> 0
+3 <-> 2
+
+COMPARISION:
+PRIMS (in ms) = 17
+KRUSHKALS (in ms) = 10
+BARUVKAS (in ms) = 120
+REVERSE DELETE (in ms) = 27

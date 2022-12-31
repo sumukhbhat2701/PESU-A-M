@@ -1,0 +1,14 @@
+best possible worst case complexity for finding all factors of a given number n is
+
+O(n)
+O(log n)
+O(n^2)
+O(sqrt(n))
+
+To check whether a given # n is a perfect power of 2, we require, in the best case
+
+O(n) operations
+O(log n) operations
+O(1) operations
+O(sqrt(n)) operations
+

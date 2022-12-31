@@ -1,0 +1,5 @@
+What is state space search?
+What is backtracking?
+Why is there a loop in backtracking in our code?
+What is the significance of fn_index in each state?
+

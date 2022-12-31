@@ -1,0 +1,5 @@
+Develop an algorithm to find the smallest and the biggest in a sequence
+	considering two elements at a time. What will be the number of comparisons?
+Develop an algorithm to fill an array of n elements with random sequence of numbers
+	from 0 to n -1. What is the complexity?
+

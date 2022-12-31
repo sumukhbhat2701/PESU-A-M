@@ -1,0 +1,9 @@
+Sort an array of unique integers using bucket sort
+	try representing an int in an int loc
+	try representing an int as a bit
+Where do we use the heap data structure?
+Why heapsort is not a preferred sorting algorithm?
+	
+Name a few examples where callback is used. Reason out why callback is necessary.
+What is a temporary?
+

@@ -1,0 +1,53 @@
+Assignment 1 : shared this evening
+
+Lecture 7_8:
+Fine Techniques : 2nd Feb 2021
+
+so far,
+build cycle:
+	pre-processing, compiling, linking, loading, running
+pointers:
+	virtual address
+	functions with pointers as parameters
+	dynamic memory management
+		book keeping or house keeping
+		
+hijacking function:
+- profiling
+- safety:
+	malloc
+	free
+------------------------------
+why not global variables?
+- not that the variable could be changed
+
+- clash of global names (not only for variables)
+	could have hole-in-scope
+- function written for a global variable is not very useful
+- variable standing for a data structure is not very useful
+-------------------------------
+
+memory manager:
+- block of bytes
+- request for a block :
+	allocate a block
+	also store book keeping
+	return a pointer
+- release of a block
+	deallocate - mark that block as free
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,27 @@
+stores at:
+1 PO should have atleast 1 location
+A location can be stop point/pickup. So it can store min 0 PO's goods or all PA's
+
+drops at:
+A location can be stop point/pickup. So it can be dropped by min 0 carrier goods or all carriers
+A carrier may or maynot been assigned a stop location yet
+
+taken by:
+A order is assigned to only one (specific/unique - 1:1) carrier
+A carrier may or maynot have a order yet
+
+creates:
+PO can have zero order at any time or more
+An order as to be by a unique PO
+
+has:
+An order has to have atleast one item
+An item can be in one or multiple order
+
+makes:
+A carrier may or maynot have a appointment yet
+Appointment is unique for very carrier - 1:1
+
+approves:
+PA can approve no or all appointments
+Appointment - 1:1

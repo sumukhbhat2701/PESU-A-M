@@ -1,0 +1,45 @@
+#define A B
+#define B xyz
+
+int main()
+{
+	A
+	B
+}
+
+replacements will be:
+
+xyz
+xyz
+
+B
+xyz
+
+A
+B
+
+none of these
+
+-----------
+#define A B
+#define B A
+
+int main()
+{
+	A
+	B
+}
+
+replacements will be:
+
+A
+B
+
+A
+A
+
+B
+B
+
+none of these
+

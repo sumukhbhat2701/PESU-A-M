@@ -1,0 +1,120 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "assignment_1.h"
+#define size_of_structure sizeof(bk)
+int size;
+char *p;
+
+// BookKeeping information about the memory allocation
+// buffer : number of bytes/blocks allocated or free 
+// encoded_flag : 1 - allocated block ; 2 - free block
+// link : the pointer holding the address of next book keeping node in the linked lists of book keeping nodes
+// returned : the pointer pointing to the first allocated block which is returned to the caller.
+struct Book_Keeping_Node{
+    int buffer;               
+    int encoded_flag;
+    struct Book_Keeping_Node *link;
+    struct Book_Keeping_Node *returned;
+};
+typedef struct Book_Keeping_Node bk;
+
+// head of the singly linked list of booking nodes
+bk *sll_head = NULL;
+
+void allocate(int n){
+    // allocate n number of bytes to global p variable
+    p = (char *)malloc(n*sizeof(char));
+    size = n;
+
+    // make the first size_of_structure bytes for book-keeping purpose.
+    sll_head = (bk *)p;   
+    sll_head->link = NULL;
+    sll_head->returned = NULL;
+    sll_head->buffer = size - size_of_structure;
+    sll_head->encoded_flag = 2;
+}
+
+void* mymalloc(int size){
+    // if allocate(int) is never called by the client code...
+    if(sll_head == NULL)    
+        return NULL;
+    
+    // iterate through the linked list until one of the following:
+    // 1. End of the linked list
+    // 2. First node in the linked list where the minimum buffer taken care by the node is "size" free blocks
+    bk *ptr;
+    for(ptr = sll_head;ptr->link!=NULL;ptr = ptr->link)
+    {
+        if(((ptr->buffer) - size >= 0) && (ptr->encoded_flag != 1))
+            break;
+    }
+    int offset = size + size_of_structure;
+    // If none of the node has a minimum of "size" free blocks, return NULL. Allocation failed
+    if((ptr->buffer) - size < 0){
+        ptr->returned = NULL;
+        return ptr->returned;
+    }
+    // If one of the nodes has buffer exactly equal to the requested "size" blocks, simply change the block as allocated and return
+    else if((ptr->buffer) - size == 0){
+        ptr->encoded_flag = 1; 
+    }
+    // If the requested "size" is less than the buffer of the first candidate node encountered, we split the buffer into 
+    // size number of allocated bytes and (buffer - offset) = (buffer - size_of_structure - size) number of free bytes with a new book-keeping node
+    else if((ptr->buffer) - offset > 0){
+        bk *new_bk = (bk *)(ptr + offset);
+        new_bk->buffer = (ptr->buffer) - offset;
+        new_bk->encoded_flag = 2;
+        new_bk->link = ptr->link;
+        ptr->buffer = size;
+        ptr->encoded_flag = 1;
+        ptr->link = new_bk;
+    }
+    // We do not split the blocks as above if on split the left over space doesnot fit or is equal to size_of_structure
+    else if((ptr->buffer) - offset <= 0){
+        ptr->encoded_flag = 1;
+    }   
+    // We return a pointer of type void* pointing the first block of allocated blocks
+    ptr->returned = (void *)(ptr+1);
+    return ptr->returned;
+}
+void myfree(void *b){
+    // Make a pointer pointing to the book keeping node
+    bk* ptr = (bk *)b - 1;
+    // Make the encoded status to free
+    ptr->encoded_flag = 2;
+    ptr->returned = NULL;
+    // Traverse the linked list with 2 pointers which points one next to other until one of the pointers becomes NULL. When we find that both 
+    // the book keeping node represents free blocks merge both free spaces with effective buffer as 
+    // back pointer's buffer + front pointer's buffer + size_of_structure and move only the front ahead. Otherwise move both pointers one node ahead
+    bk *back = sll_head;
+    bk *front = back->link;
+    while(back!=NULL && front!=NULL){
+        if((back->encoded_flag == 2) && (front->encoded_flag == 2)){
+            back->buffer += (front->buffer) + size_of_structure;
+            back->link = front->link;
+            front = front->link;
+        }
+        else{
+            back = back->link;
+            front = back->link;
+        }
+    }
+}
+
+void print_book(){
+    printf("%ld\n",size_of_structure);
+}
+
+void display_mem_map(){
+    int start_address = 0;
+    // Traverse the singly linked list until ptr is NULL and keep track of the position of book-keeping node once every 
+    // size_of_structure + current buffer and print 0 as encoded_status. Print 1 or 2 as encoded status every size_of_structure position from start
+    // of book keeping node. Print other meta data stored in book keeping node as well
+    for(bk *ptr = sll_head;ptr!=NULL;ptr = ptr->link)
+    {
+        printf("%d\t%d\t%d\n",start_address ,size_of_structure,0);
+        start_address += size_of_structure;
+        printf("%d\t%d\t%d\n",start_address,ptr->buffer,ptr->encoded_flag);
+        start_address += (ptr->buffer);
+    }
+}

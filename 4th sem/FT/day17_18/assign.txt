@@ -1,0 +1,17 @@
+sort an array of int using a comparator function.
+void mysort(int a[], int n, int (*comp)(int, int));
+- sort in ascending order
+- sort in descending order
+- sort based on unit digit
+- sort based on digital sum
+Acheve all this by writing a single sort function
+
+search based on condition
+int find(int a[], int n, int (*pred)(int));
+find the first element satisfying the pred.
+- find the first odd number
+- find the first prime number
+- find the first perfect square
+- find the first Fib #
+
+

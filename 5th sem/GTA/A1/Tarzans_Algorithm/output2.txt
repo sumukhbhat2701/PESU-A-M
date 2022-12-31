@@ -1,0 +1,2 @@
+Articulation points obtained are:
+15 39 42 62 99 

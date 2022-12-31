@@ -1,0 +1,10 @@
+What is the best possible worst case for sorting based on worstcase?
+Why is heapsort not preferred?
+In bubblesort, you may compare a[j] with  a[j + 1] using < or <=. What difference would 
+	that make?
+Is insertionsort stable? inplace?
+
+In modified insertsort, I will find the smallest element and bring it to the leftmost
+position - then insert the remaining n-1 elements. Would this make any difference
+in the insert algorithm?
+

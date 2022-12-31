@@ -1,0 +1,28 @@
+int *p = (int*)malloc(sizeof(int));
+// ...
+free(p);
+
+p is NULL after p
+p is a dangling pointer
+*p is a dangling pointer
+free should be called as free(&p)
+
+void what(int *x, int *y)
+{
+	int temp = *x; *x = *y; *y = temp;
+}
+
+int a[5] = {1, 2, 3, 4, 5};
+int b[5] = {6, 7, 8, 9, 10};
+swap(a, b);
+
+swaps two arrays
+swaps a[0] and b[0]
+gives compile time error
+gives runtime error
+
+
+
+
+
+

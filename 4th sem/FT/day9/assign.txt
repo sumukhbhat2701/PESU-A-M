@@ -1,0 +1,15 @@
+1. Implement the solution to the prison problem.
+A prison has cells numbered from 1 to n (some input size). All cells are closed.
+The warden walks along the cells - opens it if closed, closes it if open.
+He repeats for multiples of 1, 2, ..., until n.
+Prisoners in the cells which are open are free to go. Which cells are open at the end?
+Write a program to do it.
+a) represent each cell by an int
+b) represent each cell by a bit
+c) Do you find a pattern ? Give reasons.
+
+2. Given an unordered sequence of (n - 1) unique numbers in the range 1 to n, find the
+missing number. Solve it programmatically.
+
+3. Given 12 marbles out of which one is odd - may be heavier or lighter compared to others,
+find the odd one.
